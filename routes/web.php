@@ -2,17 +2,17 @@
 use App\Http\Controllers\MakeController;
 use Illuminate\Support\Facades\Route;
 use Illuminate\Support\Facades\View;
+use Tests\Feature\ExampleTest;
 
-Route::view('/','welcome');
+Route::view('/','index');
 
 // Route::group(["middleware"=>"test:1,1"] ,function(){
 //     Route::get('home','MakeController@index'); 
-// });
+// });;
+
+Route::resource('home','MakeController');
 
 //Route::resource('example', 'MakeController');
-
-Route::resource("example", MakeController::class);
-
 //// example -----> R(read) index ---->get name {example.index}
 ///// example/{id} -----> R(read) show ----> get name {example.show}
 ////// example/create ---->C create ---->get name {example.create}
