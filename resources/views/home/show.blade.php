@@ -1,3 +1,5 @@
+@extends('index')
+@section('content')
 <!DOCTYPE html>
 <html>
 <head>
@@ -50,3 +52,4 @@ tr:nth-child(even) {
 
 </body>
 </html>
+@endsection('content')
