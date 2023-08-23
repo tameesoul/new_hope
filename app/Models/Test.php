@@ -12,7 +12,9 @@ class Test extends Model
 
     protected $fillable = [
         'name',
-        'content'
+        'content',
+        'status',
+        'show'
     ];
 
     public function getCreatedAtAttribute($value)
@@ -20,6 +22,10 @@ class Test extends Model
         return date('m/D h:i',strtotime($value));
     }
     public function getUpdatedAtAttribute($value)
+    {
+        return date('m/D h:i',strtotime($value));
+    }
+    public function getDeletedAtAttribute($value)
     {
         return date('m/D h:i',strtotime($value));
     }

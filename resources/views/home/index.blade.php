@@ -35,8 +35,10 @@ tr:nth-child(even) {
     <th>edit</th>
     <th>show</th>
     <th>delete</th>
-    <th>created_At</th>
-    <th>updated_At</th>
+    <th>forceDelete</th>
+    <th>createdAt</th>
+    <th>updatedAt</th>
+    <th>deletedAt</th>
   </tr>
   @foreach($tests as $test)
   <tr>
@@ -55,16 +57,17 @@ tr:nth-child(even) {
             <input type="submit" value="Delete">
         </form>
     </td> 
-    {{-- <td>
-        <form action="{{route("home.forceDelete",['home'=>$test->id])}}"method="POST">
-            @csrf
-            <input type="submit" value="forceDelete">
-        </form>
-    </td>  --}}
+    <td>
+      <form action="{{route("home.forceDelete",['home'=>$test->id])}}" method="POST">
+        @method('DELETE')
+          @csrf
+          <input type="submit" value="forceDelete">
+      </form>
+  </td>
 
-    <td>{{$test->created_at}}</td>
-    <td>{{$test->updated_at}}</td>
-    <td>{{$test->deleted_at}}</td>
+    <td>{{$test->CreatedAt}}</td>
+    <td>{{$test->UpdatedAt}}</td>
+    <td>{{$test->DeletedAt}}</td>
   </tr>
   @endforeach
 </table>

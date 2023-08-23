@@ -53,12 +53,12 @@ class MakeController extends Controller
 
     public function destroy(string $id)
     {
-        Test::where('id',$id)->forceDelete();
+        Test::where('id',$id)->delete();
         return redirect('home');
     }
-    // public function forceDelete(string $id)
-    // {
-    //     Test::where('id',$id)->forcedelete();
-    //     return redirect('home');
-    // }
+    public function forceDelete(string $id)
+    {
+        Test::where('id',$id)->forcedelete();
+        return redirect('home');
+    }
 }
