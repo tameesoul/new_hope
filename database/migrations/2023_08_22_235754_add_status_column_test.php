@@ -10,8 +10,8 @@ return new class extends Migration
     public function up(): void
     {
         Schema::table('tests', function (Blueprint $table) {
-            $table->enum('status',['enable','disable']);
-            $table->boolean('show');
+            $table->enum('status',['enable','disable'])->nullable();
+            $table->boolean('show')->nullable();
         });
     }
 

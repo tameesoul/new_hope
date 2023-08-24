@@ -13,11 +13,20 @@ class Post extends Model
     protected $fillable = [
         'title',
         'content',
-        'user_id' 
+        'user_id'
         ];
     public function user()
     {
         return $this->belongsTo(User::class);
+    }
+
+    public function comment()
+    {
+        return $this->morphOne(Comment::class,'commentable');
+    }
+    public function comments()
+    {
+        return $this->morphMany(Comment::class,'commentable');
     }
 }
 
